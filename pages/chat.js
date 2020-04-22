@@ -3,18 +3,17 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 
 const ChatBox = () => (
-    <Layout>
-
-        <Wrapper>
-            <Sidebar />
-            <InnerBoxWrapper>
-                <InnerBox>
-                    <h1>test</h1>
-                </InnerBox>
-            </InnerBoxWrapper>
-            <h1>test</h1>
-        </Wrapper>
-    </Layout>
+  <Layout>
+    <Wrapper>
+    <Sidebar />
+      <InnerBoxWrapper>
+        <InnerBox>
+          <h1>test</h1>
+        </InnerBox>
+      </InnerBoxWrapper>
+      <h1>test</h1>
+    </Wrapper>
+  </Layout>
 );
 
 const Layout = styled.section`
@@ -32,16 +31,15 @@ const Layout = styled.section`
 const Wrapper = styled.section`
   margin-top: auto;
   margin-bottom: auto;
-  padding:  0.75rem 0 !important;
+  padding: 0.75rem 0 !important;
   overflow-y: auto;
   white-space: nowrap;
   border-radius: 15px 15px 0 0 !important;
   border-bottom: 0 !important;
-
 `;
 
 const InnerBox = styled.section`
-  height: 100vh; 
+  height: 100vh;
   width: 100vw;
   padding-right: 20rem;
 `;
