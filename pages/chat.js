@@ -4,12 +4,12 @@ import Sidebar from "../components/Sidebar";
 
 const ChatBox = () => (
     <Layout>
-
         <Wrapper>
             <Sidebar />
             <InnerBoxWrapper>
+
                 <InnerBox>
-                    <h1>test</h1>
+                    <input type="text"></input>
                 </InnerBox>
             </InnerBoxWrapper>
             <h1>test</h1>
@@ -41,15 +41,16 @@ const Wrapper = styled.section`
 `;
 
 const InnerBox = styled.section`
-  height: 100vh; 
-  width: 100vw;
-  padding-right: 20rem;
+text-align: center;
+width: 100%;
+align-self: flex-end;
+
 `;
 
 const InnerBoxWrapper = styled.section`
+  display: flex;
   height: 100vh;
   width: 50vw;
-  padding-right: 20rem;
   background: black;
   opacity: 0.5;
 `;
