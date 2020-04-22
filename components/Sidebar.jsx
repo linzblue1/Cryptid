@@ -42,4 +42,5 @@ const SideNavA = styled.a`
   color: #818181;
   display: block;
 `;
+
 export default Sidebar;
