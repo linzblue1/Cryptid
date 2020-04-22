@@ -20,9 +20,9 @@ background: papayawhip;`
 
 const InnerBox = styled.section`
 height: 100vh;
-width: 80vw;
+width: 50vw;
 background: gray;
-padding-left: 30rem;
+padding-left: 20rem;
 `
 
 const MessageBox = styled.input`
