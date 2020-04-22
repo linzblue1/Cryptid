@@ -4,14 +4,13 @@ import Sidebar from "../components/Sidebar";
 
 const ChatBox = () => (
     <Layout>
-        <Wrapper>
-            <Sidebar>
 
-            </Sidebar>
+        <Wrapper>
+            <Sidebar />
             <InnerBoxWrapper>
                 <InnerBox>
-                    test
-            </InnerBox>
+                    <h1>test</h1>
+                </InnerBox>
             </InnerBoxWrapper>
             <h1>test</h1>
         </Wrapper>
@@ -26,6 +25,8 @@ const Layout = styled.section`
   background: linear-gradient(to right, #91eae4, #86a8e7, #7f7fd5);
   border-radius: 15px !important;
   background-color: rgba(0, 0, 0, 0.4) !important;
+  padding-left: 10rem;
+  padding-right: 10rem;
 `;
 
 const Wrapper = styled.section`
@@ -36,18 +37,19 @@ const Wrapper = styled.section`
   white-space: nowrap;
   border-radius: 15px 15px 0 0 !important;
   border-bottom: 0 !important;
+
 `;
 
 const InnerBox = styled.section`
   height: 100vh; 
   width: 100vw;
-
+  padding-right: 20rem;
 `;
 
 const InnerBoxWrapper = styled.section`
   height: 100vh;
-  width: 0vw;
-  padding-left: 20rem;
+  width: 50vw;
+  padding-right: 20rem;
   background: black;
   opacity: 0.5;
 `;
