@@ -31,18 +31,19 @@ const Layout = styled.section`
 const Wrapper = styled.section`
   margin-top: auto;
   margin-bottom: auto;
-  padding:  0.75rem 0 !important;
+  padding: 0.75rem 0 !important;
   overflow-y: auto;
   white-space: nowrap;
   border-radius: 15px 15px 0 0 !important;
   border-bottom: 0 !important;
-
 `;
 
 const InnerBox = styled.section`
+
 text-align: center;
 width: 100%;
 align-self: flex-end;
+
 `;
 
 const InnerBoxWrapper = styled.section`
