@@ -7,7 +7,6 @@ const ChatBox = () => (
         <Wrapper>
             <Sidebar />
             <InnerBoxWrapper>
-
                 <InnerBox>
                     <input type="text"></input>
                 </InnerBox>
@@ -40,22 +39,16 @@ const Wrapper = styled.section`
 `;
 
 const InnerBox = styled.section`
-<<<<<<< HEAD
-  height: 100vh;
-  width: 100vw;
-  padding-right: 20rem;
-=======
+
 text-align: center;
 width: 100%;
 align-self: flex-end;
 
->>>>>>> 5f60b98c3da31d35a95c8fc52ccdc05bc6b8cd05
 `;
 
 const InnerBoxWrapper = styled.section`
   display: flex;
   height: 100vh;
-  width: 50vw;
   background: black;
   opacity: 0.5;
 `;
