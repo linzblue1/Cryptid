@@ -47,7 +47,7 @@ align-self: flex-end;
 
 const InnerBoxWrapper = styled.section`
   display: flex;
-  height: 100vh;
+  height: 90vh;
   background: black;
   opacity: 0.5;
 `;
