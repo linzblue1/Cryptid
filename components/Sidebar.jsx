@@ -8,9 +8,11 @@ const SideNav = styled.div`
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: black;
+    padding:  0.75rem 0 !important;
+    overflow-y: auto;
+    white-space: nowrap;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 20px;   
 `
 const SideNavA = styled.a`
     padding: 6px 8px 6px 16px;
