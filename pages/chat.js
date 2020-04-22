@@ -3,18 +3,18 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 
 const ChatBox = () => (
-    <Layout>
-        <Sidebar />
-        <Wrapper>
+  <Layout>
+    <Sidebar />
+    <Wrapper>
 
-            <InnerBoxWrapper>
-                <InnerBox>
-                    <input type="text"></input>
-                </InnerBox>
-            </InnerBoxWrapper>
-            <h1>test</h1>
-        </Wrapper>
-    </Layout>
+      <InnerBoxWrapper>
+        <InnerBox>
+          <input type="text"></input>
+        </InnerBox>
+      </InnerBoxWrapper>
+      <h1>test</h1>
+    </Wrapper>
+  </Layout>
 );
 
 const Layout = styled.section`
