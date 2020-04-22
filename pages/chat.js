@@ -3,17 +3,18 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 
 const ChatBox = () => (
-  <Layout>
-    <Wrapper>
-    <Sidebar />
-      <InnerBoxWrapper>
-        <InnerBox>
-          <h1>test</h1>
-        </InnerBox>
-      </InnerBoxWrapper>
-      <h1>test</h1>
-    </Wrapper>
-  </Layout>
+    <Layout>
+        <Wrapper>
+            <Sidebar />
+            <InnerBoxWrapper>
+
+                <InnerBox>
+                    <input type="text"></input>
+                </InnerBox>
+            </InnerBoxWrapper>
+            <h1>test</h1>
+        </Wrapper>
+    </Layout>
 );
 
 const Layout = styled.section`
@@ -39,15 +40,22 @@ const Wrapper = styled.section`
 `;
 
 const InnerBox = styled.section`
+<<<<<<< HEAD
   height: 100vh;
   width: 100vw;
   padding-right: 20rem;
+=======
+text-align: center;
+width: 100%;
+align-self: flex-end;
+
+>>>>>>> 5f60b98c3da31d35a95c8fc52ccdc05bc6b8cd05
 `;
 
 const InnerBoxWrapper = styled.section`
+  display: flex;
   height: 100vh;
   width: 50vw;
-  padding-right: 20rem;
   background: black;
   opacity: 0.5;
 `;
