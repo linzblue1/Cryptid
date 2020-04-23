@@ -20,7 +20,7 @@ class Signup extends Component {
                     <HThree>Confirm Password:</HThree>
                     <PasswordMatchInput type="text" placeholder="Password-Confirm"></PasswordMatchInput><br></br>
                     <SignUpButton type="button" value="Signup" className="signup-button"></SignUpButton><br></br>
-                    <LoginPage href="#">Looking for login?</LoginPage>
+                    <LoginPage href="/login">Looking for login?</LoginPage>
                 </FormWrapper>
             </Wrapper>
         )

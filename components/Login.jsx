@@ -16,7 +16,7 @@ class Login extends Component {
                     <HThree>Password:</HThree>
                     <PasswordInput type="text" placeholder="Password"></PasswordInput><br></br>
                     <LoginButton type="button" value="Login" className="login-button"></LoginButton><br></br>
-                    <SignUp href="#">Sign up!</SignUp>
+                    <SignUp href="/signup">Sign up!</SignUp>
                     <HSix>Can't access your account?</HSix>
                 </FormWrapper>
             </Wrapper>
