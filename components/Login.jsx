@@ -37,6 +37,10 @@ const LoginTitle = styled.h1`
     color: white;
     text-align: center;
     font-size: 300%;
+    @media only screen and (min-width : 150px) and (max-width : 530px){
+        font-size: 200%;
+        margin: 0;
+    }
 `
 
 const TitleWrapper = styled.div`
@@ -56,6 +60,7 @@ const HThree = styled.h6`
     text-align: left;
     margin-left: 40px;
     color: white;
+    font-size: 24px;
 `
 const UsernameInput = styled.input`
     max-width: 400px;
