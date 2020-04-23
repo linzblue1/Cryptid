@@ -59,7 +59,7 @@ const HThree = styled.h3`
     text-align: left;
     margin-left: 40px;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
 `
 const UsernameInput = styled.input`
     max-width: 400px;

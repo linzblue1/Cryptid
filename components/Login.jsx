@@ -50,7 +50,7 @@ const FormWrapper = styled.div`
     text-align: center;
 `
 
-const HThree = styled.h3`
+const HThree = styled.h6`
     margin: 0;
     padding: 0;
     text-align: left;
@@ -90,9 +90,9 @@ const LoginButton = styled.input`
 `
 const SignUp = styled.a`
     color:#f2f2f2;
-    margin-left: -50%;
     cursor:pointer;
-    text-decoration:underline;
+    text-align: center;
+    font-size: 24px;
 `
 const HSix= styled.h6`
     margin: 0;
@@ -100,8 +100,7 @@ const HSix= styled.h6`
     color: white;
     text-decoration: underline;
     cursor: pointer;
-    text-align: left;
-    margin-left: 40px;
+    font-size: 18px;
 `
 
 
