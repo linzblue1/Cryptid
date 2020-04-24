@@ -19,15 +19,16 @@ class Sidebar extends Component {
 const SideNav = styled.div`
 display: flex;
 align-items: center;
-  height: 90%;
+  height: 90vh;
   width: 20%;
 position: relative;
 flex-direction: column;
   z-index: 1;
-  top: 0;
-  left: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   padding: 0.75rem 0 !important;
   margin-right: 0.1vw;
+  margin-left: 0.5vw;
   overflow-y: auto;
   white-space: nowrap;
   overflow-x: hidden;
