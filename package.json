@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon -w server -w universal -w yarn.lock -w next.config.js -w config.js -w package.json",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -13,8 +13,5 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "styled-components": "^5.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
   }
 }
