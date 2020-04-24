@@ -4,7 +4,7 @@ import Sidebar from "../components/Sidebar";
 
 const ChatBox = () => (
   <Layout>
-    <Sidebar />
+    <Sidebar/>
     <Wrapper>
 
       <InnerBoxWrapper>
