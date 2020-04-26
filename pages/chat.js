@@ -3,13 +3,14 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import UserMessage from "../components/UserMessage";
 
-import { Store } from '../components/Store'
+import { Store, CTX } from '../components/Store'
 
-const ChatBox = () => {
+const ChatBox = (props) => {
   const [textValue, changeTextValue] = React.useState('');
 
+  // const [allChats] = React.useContext(CTX);
 
-
+  // console.log(allChats)
   return (
 
     <Layout>

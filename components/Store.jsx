@@ -36,10 +36,10 @@ export const Store = (props) => {
         socket = io(':3001')
     }
 
-    const reducerHook = React.useReducer(reducer, initState)
+    const [allChats] = React.useReducer(reducer, initState)
 
     return (
-        <CTX.Provider value={reducerHook}>
+        <CTX.Provider value={{ allChats }}>
             {props.children}
         </CTX.Provider>
     )

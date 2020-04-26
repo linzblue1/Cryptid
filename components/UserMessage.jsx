@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
-import { Store, CTX } from '../components/Store'
+import { Store, CTX } from './Store'
 
-const UserMesssage = () => {
-
-    const [allChats] = React.useContext(CTX);
+const UserMessage = () => {
+    const { allChats } = React.useContext(CTX);
     const channel = Object.keys(allChats);
     const [activeChannel, changeActiveChannel] = React.useState(channel[0])
 
@@ -37,4 +36,4 @@ color: white;
 const UserMessageStyle = styled.div`
 color: white;
 `
-export default UserMesssage;
+export default UserMessage;
