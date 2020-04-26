@@ -4,19 +4,25 @@ import Sidebar from "../components/Sidebar";
 import UserMessage from "../components/UserMessage";
 
 
+
 const ChatBox = () => {
   const [textValue, changeTextValue] = React.useState('');
 
+
+
   return (
+
     <Layout>
       <Sidebar />
       <Wrapper>
 
         <InnerBoxWrapper>
+
           <InnerBox>
             <UserMessage />
             <input label="Send a chat" value={textValue} onChange={e => changeTextValue(e.target.value)} type="text" />
           </InnerBox>
+
         </InnerBoxWrapper>
         <h1>test</h1>
       </Wrapper>
@@ -63,5 +69,4 @@ const InnerBoxWrapper = styled.section`
 `;
 
 const MessageBox = styled.input``;
-
-export default ChatBox;
+export default (props) => <Store><ChatBox {...props} /></Store>
