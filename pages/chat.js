@@ -24,7 +24,7 @@ const ChatBox = () => {
           </InnerBox>
 
         </InnerBoxWrapper>
-        <h1>test</h1>
+
       </Wrapper>
     </Layout>
   )
