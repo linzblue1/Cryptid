@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import styled from "styled-components";
-
+import { Store, CTX } from '../components/Store'
 
 const UserMesssage = () => {
+
+    const [allChats] = React.useContext(CTX);
+    const channel = Object.keys(allChats);
+    const [activeChannel, changeActiveChannel] = React.useState(channel[0])
+
     return (
         <div>
             <div>
                 {
-                    [{ from: 'user', msg: 'donkey' }].map((chat, i) => (
+                    allChats[activeChannel].map((chat, i) => (
                         <UserMessageWrapper> <UserName><p>{chat.from}</p></UserName><UserMessageStyle><p>{chat.msg}</p></UserMessageStyle></UserMessageWrapper>
                     ))
                 }
