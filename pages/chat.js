@@ -1,21 +1,58 @@
 import React from "react";
 import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
+import UserMessage from "../components/UserMessage";
 
-const ChatBox = () => (
-  <Layout>
-    <Sidebar/>
-    <Wrapper>
+import { Store, CTX } from '../components/Store'
 
-      <InnerBoxWrapper>
-        <InnerBox>
-          <input type="text"></input>
-        </InnerBox>
-      </InnerBoxWrapper>
-      <h1>test</h1>
-    </Wrapper>
-  </Layout>
-);
+const ChatBox = (props) => {
+  const [textValue, changeTextValue] = React.useState('');
+
+  const { allChats, sendChatAction, user } = React.useContext(CTX);
+  const channel = Object.keys(allChats);
+  const [activeChannel, changeActiveChannel] = React.useState(channel[0])
+  console.log(allChats)
+
+
+
+  const onKeyPressHandler = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      sendChatAction({ from: user, msg: textValue, channel: activeChannel })
+      changeTextValue('')
+    }
+  }
+
+  const onChangeHandler = e => {
+
+    changeTextValue(e.target.value);
+  }
+
+
+  return (
+
+    <Layout>
+      <Sidebar />
+      <Wrapper>
+
+        <InnerBoxWrapper>
+
+          <InnerBox>
+            <UserMessage />
+            <input
+              label="Send a chat"
+              onChange={onChangeHandler}
+              value={textValue}
+              onKeyPress={onKeyPressHandler}
+            />
+          </InnerBox>
+
+        </InnerBoxWrapper>
+
+      </Wrapper>
+    </Layout>
+  )
+}
 
 const Layout = styled.section`
   height: 100vh;
@@ -56,5 +93,4 @@ const InnerBoxWrapper = styled.section`
 `;
 
 const MessageBox = styled.input``;
-
-export default ChatBox;
+export default (props) => <Store><ChatBox {...props} /></Store>
