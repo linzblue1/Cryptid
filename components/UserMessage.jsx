@@ -24,16 +24,19 @@ const UserName = styled.div`
 color: white;
 height: 50px;
 width: 50px;
+margin-right: 50px;
 `
 
 const UserMessageWrapper = styled.div`
 display: flex;
-height: 80px;
+height: 40px;
 width: 500px;
 color: white;
 `
 
 const UserMessageStyle = styled.div`
 color: white;
+
+
 `
 export default UserMessage;
