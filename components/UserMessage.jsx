@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Store, CTX } from './Store'
 
 const UserMessage = () => {
-    const { allChats } = React.useContext(CTX);
+    const { allChats, sendChatAction } = React.useContext(CTX);
     const channel = Object.keys(allChats);
     const [activeChannel, changeActiveChannel] = React.useState(channel[0])
 
