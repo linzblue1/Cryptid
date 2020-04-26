@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import UserMessage from "../components/UserMessage";
 
-
+import { Store } from '../components/Store'
 
 const ChatBox = () => {
   const [textValue, changeTextValue] = React.useState('');
