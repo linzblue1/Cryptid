@@ -1,19 +1,31 @@
 import axios from "axios";
 
-const signup = (newUser) => {
+
+
+const options = {
+    credentials: "include",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    
+};
+
+export const signup = (newUser) => {
     return axios 
-    .post("users/signup", {
+    .post("localhost:3001/users/signup", {
         name: newUser.name,
         email: newUser.email,
         password: newUser.password
-    })
+    },options)
+   
     .then(response => {
         console.log("User is now registered")
     })
 
 }
 
-const login = (user) => {
+export const login = (user) => {
     return axios 
     .post("users/login", {
         username: user.username,
@@ -28,4 +40,3 @@ const login = (user) => {
     })
 }
 
-export default {signup, login}

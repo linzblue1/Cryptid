@@ -1,59 +1,102 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
-import signup from "./userFunctions";
+import {signup} from "./userFunctions";
 
 class Signup extends Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
-      username: '',
-      usernme: '',
-      password: ''
-    }
-    this.onChange = this.onChange.bind(this);
+      username: "",
+      email: "",
+      password: "",
+      query: "",
+      hits: [],
+    };
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangeQuery = this.onChangeQuery.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  
-  
-  onChange(e) {
-    this.setState({[e.target.name]: e.target.value})
-  }
 
-  onSubmit(e) {
-    e.preventDefault()
+  onChangeUsername = (e) => {
+    this.setState({
+      username: e.target.value,
+    });
+  };
+
+  onChangeEmail = (e) => {
+    this.setState({
+      email: e.target.value,
+    });
+  };
+
+  onChangePassword = (e) => {
+    this.setState({
+      password: e.target.value,
+    });
+  };
+
+  onChangeQuery = (e) => {
+    this.setState({
+      query: e.target.value,
+    });
+  };
+
+  onSubmit = (e) => {
+    e.preventDefault();
+    console.log("hello")
 
     const newUser = {
       username: this.state.username,
       email: this.state.email,
-      password: this.state.password
-    }
+      password: this.state.password,
+      query: this.state.query
+    };
 
-    signup(newUser).then(res => {
-      res.redirect('/chat')
-    })
-  }
-  
+    
+    signup(newUser).then((res) => {
+      res.redirect("/chat");
+    });
+  };
+
   render() {
     return (
       <Wrapper>
         <TitleWrapper>
           <SignUpTitle>Signup</SignUpTitle>
         </TitleWrapper>
-        <FormWrapper onSubmit={this.onSubmit}>
+        <FormWrapper>
+          <form onSubmit={this.onSubmit}>
           <HThree>E-mail:</HThree>
-          <EmailInput type="email" placeholder="E-mail" onChange={this.onChange} value={this.state.email}></EmailInput>
+          <EmailInput
+            type="text"
+            placeholder="E-mail"
+            onChange={this.onChangeEmail}
+            value={this.state.email}
+          ></EmailInput>
           <HThree>Username:</HThree>
-          <UsernameInput type="username" placeholder="Username" onChange={this.onChange} value={this.state.username}></UsernameInput>
+          <UsernameInput
+            type="text"
+            placeholder="Username"
+            onChange={this.onChangeUsername}
+            value={this.state.username}
+          ></UsernameInput>
           <br></br>
           <HThree>Password:</HThree>
-          <PasswordInput type="password" placeholder="Password" onChange={this.onChange} value={this.state.password}></PasswordInput>
+          <PasswordInput
+            type="text"
+            placeholder="Password"
+            onChange={this.onChangePassword}
+            value={this.state.password}
+          ></PasswordInput>
           <br></br>
           <HThree>Confirm Password:</HThree>
           <PasswordMatchInput
             type="text"
             placeholder="Password-Confirm"
-            onChange={this.onChange}
+            onChange={this.onChangePassword}
             value={this.state.password}
           ></PasswordMatchInput>
           <br></br>
@@ -62,6 +105,7 @@ class Signup extends Component {
             value="Signup"
             className="signup-button"
           ></SignUpButton>
+          </form>
           <br></br>
           <LoginPage href="/login">Looking for login?</LoginPage>
         </FormWrapper>

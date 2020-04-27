@@ -5,32 +5,40 @@ import login from "./userFunctions";
 
 class Login extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      username: '',
-      password: ''
-    }
-    this.onChange = this.onChange.bind(this);
+      username: "",
+      password: "",
+    };
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChange(e) {
-    this.setState({[e.target.name]: e.target.value})
-  }
+  onChangeUsername = (e) => {
+    this.setState({
+      username: e.target.value,
+    });
+  };
+
+  onChangePassword = (e) => {
+    this.setState({
+      password: e.target.value,
+    });
+  };
 
   onSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     const user = {
       email: this.state.username,
-      password: this.state.password
-    }
+      password: this.state.password,
+    };
 
-    login(user).then(res => {
-      res.redirect('/chat')
-    })
+    login(user).then((res) => {
+      res.redirect("/chat");
+    });
   }
-  
 
   render() {
     return (
@@ -40,10 +48,20 @@ class Login extends Component {
         </TitleWrapper>
         <FormWrapper onSubmit={this.onSubmit}>
           <HThree>Username:</HThree>
-          <UsernameInput type="username" placeholder="username" value={this.state.email} onChange={this.onChange}></UsernameInput>
+          <UsernameInput
+            type="text"
+            placeholder="username"
+            value={this.state.email}
+            onChange={this.onChangeUsername}
+          ></UsernameInput>
           <br></br>
           <HThree>Password:</HThree>
-          <PasswordInput type="password" placeholder="password" value={this.state.password} onChange={this.onChange}></PasswordInput>
+          <PasswordInput
+            type="text"
+            placeholder="password"
+            value={this.state.password}
+            onChange={this.onChangePassword}
+          ></PasswordInput>
           <br></br>
           <LoginButton
             type="submit"
