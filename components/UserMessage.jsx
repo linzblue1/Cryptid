@@ -12,7 +12,7 @@ const UserMessage = () => {
             <div>
                 {
                     allChats[activeChannel].map((chat, i) => (
-                        <UserMessageWrapper> <UserName><p>{chat.from}</p></UserName><UserMessageStyle><p>{chat.msg}</p></UserMessageStyle></UserMessageWrapper>
+                        <UserMessageWrapper key={i}> <UserName><p>{chat.from}</p></UserName><UserMessageStyle><p>{chat.msg}</p></UserMessageStyle></UserMessageWrapper>
                     ))
                 }
             </div>

@@ -1,18 +1,22 @@
 import React from "react";
 import { Component } from "react";
-// import user from "./user.png"
 import styled from "styled-components";
 
 class SidebarUser extends Component {
+    state = {
+        channelImage: []
+    }
+    
     render() {
         return (
+            
             <UserWapper>
                     <ImageWrapper>
-                        <UserImage src="" atl="user image"/>
+                    <UserImage src="/images/user.png" atl="user image"/>
                     </ImageWrapper>
                     <InfoWrapper>
-                        <UserName>A person</UserName>
-                        <LastMessage>Blah Blah Blah Blah!</LastMessage>
+                        <UserName>Atlanta Channel</UserName>
+                        <LastMessage>YEET</LastMessage>
                         <Time>4:20 PM</Time>
                     </InfoWrapper>
             </UserWapper>
@@ -54,8 +58,7 @@ const UserName = styled.p`
     margin: 3px;
 
     @media only screen and (min-width : 50px) and (max-width : 530px){
-        font-size: 20px;
-        white-space: wrap;
+        display: none;
     }
 `
 const LastMessage = styled.p`

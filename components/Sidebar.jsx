@@ -8,12 +8,11 @@ class Sidebar extends Component {
         return (
             <SideNav>
                 <SidebarUser/>
-                <SidebarUser/>
-                <SidebarUser/>
             </SideNav>
         );
     }
 }
+
 
 const SideNav = styled.div`
     display: flex;
@@ -22,6 +21,10 @@ const SideNav = styled.div`
     background: black;
     opacity: 0.5;
     border-radius: 15px !important;
+    @media only screen and (min-width : 50px) and (max-width : 530px){
+        margin: 0px;
+        align-items: center;
+    }
 `;
 
 export default Sidebar;
