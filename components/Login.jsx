@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import styled from "styled-components";
-import login from "./userFunctions";
+import {login} from "./userFunctions";
 
 class Login extends Component {
   constructor() {
