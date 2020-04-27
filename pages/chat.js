@@ -3,40 +3,33 @@ import styled from "styled-components";
 import Sidebar from "../components/Sidebar";
 import UserMessage from "../components/UserMessage";
 
-import { Store, CTX } from '../components/Store'
+import { Store, CTX } from "../components/Store";
 
 const ChatBox = (props) => {
-  const [textValue, changeTextValue] = React.useState('');
+  const [textValue, changeTextValue] = React.useState("");
 
   const { allChats, sendChatAction, user } = React.useContext(CTX);
   const channel = Object.keys(allChats);
-  const [activeChannel, changeActiveChannel] = React.useState(channel[0])
-  console.log(allChats)
-
-
+  const [activeChannel, changeActiveChannel] = React.useState(channel[0]);
+  console.log(allChats);
 
   const onKeyPressHandler = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       e.preventDefault();
-      sendChatAction({ from: user, msg: textValue, channel: activeChannel })
-      changeTextValue('')
+      sendChatAction({ from: user, msg: textValue, channel: activeChannel });
+      changeTextValue("");
     }
-  }
+  };
 
-  const onChangeHandler = e => {
-
+  const onChangeHandler = (e) => {
     changeTextValue(e.target.value);
-  }
-
+  };
 
   return (
-
     <Layout>
       <Sidebar />
       <Wrapper>
-
         <InnerBoxWrapper>
-
           <InnerBox>
             <UserMessage />
             <input
@@ -46,13 +39,11 @@ const ChatBox = (props) => {
               onKeyPress={onKeyPressHandler}
             />
           </InnerBox>
-
         </InnerBoxWrapper>
-
       </Wrapper>
     </Layout>
-  )
-}
+  );
+};
 
 const Layout = styled.section`
   height: 100vh;
@@ -74,14 +65,14 @@ const Wrapper = styled.section`
   border-radius: 15px 15px 0 0 !important;
   border-bottom: 0 !important;
   width: 100%;
-margin-left: 1vw;
-margin-right: 15vw;
+  margin-left: 1vw;
+  margin-right: 15vw;
 `;
 
 const InnerBox = styled.section`
-text-align: center;
-width: 100%;
-align-self: flex-end;
+  text-align: center;
+  width: 100%;
+  align-self: flex-end;
 `;
 
 const InnerBoxWrapper = styled.section`
@@ -89,8 +80,11 @@ const InnerBoxWrapper = styled.section`
   height: 90vh;
   background: black;
   opacity: 0.5;
-
 `;
 
 const MessageBox = styled.input``;
-export default (props) => <Store><ChatBox {...props} /></Store>
+export default (props) => (
+  <Store>
+    <ChatBox {...props} />
+  </Store>
+);
