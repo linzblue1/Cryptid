@@ -1,18 +1,27 @@
 import React from "react";
 import { Component } from "react";
-import SidebarUser from "./SidebarUser"
+import SingleChannel from "./SingleChannel";
 import styled from "styled-components";
+import UserMessage from "./UserMessage";
 
 class Sidebar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {channels: ["channel one", "channel 2"]};
+    }
     render() {
+        const { channels } = this.state;
         return (
             <SideNav>
-                <SidebarUser/>
+                {
+                    channels.map((oneChannel, i) => (
+                        <SingleChannel channel={oneChannel} key={i}/>
+                    ))
+                }
             </SideNav>
         );
     }
 }
-
 
 const SideNav = styled.div`
     display: flex;

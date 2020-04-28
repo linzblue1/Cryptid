@@ -6,7 +6,7 @@ const UserMessage = () => {
     const { allChats, sendChatAction } = React.useContext(CTX);
     const channel = Object.keys(allChats);
     const [activeChannel, changeActiveChannel] = React.useState(channel[0])
-
+    console.log(allChats);
     return (
         <div>
             <div>

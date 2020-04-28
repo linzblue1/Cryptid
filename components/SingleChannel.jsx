@@ -1,16 +1,11 @@
 import React from "react";
-import { Component } from "react";
 import styled from "styled-components";
+import UserMessage from "./UserMessage";
 
-class SidebarUser extends Component {
-    state = {
-        channelImage: []
-    }
-    
-    render() {
+const SingleChannel = ({chat, index}) => {
         return (
             
-            <UserWapper>
+            <UserWapper href="#">
                     <ImageWrapper>
                     <UserImage src="/images/user.png" atl="user image"/>
                     </ImageWrapper>
@@ -21,10 +16,10 @@ class SidebarUser extends Component {
                     </InfoWrapper>
             </UserWapper>
         );
-    }
+    
 }
 
-const UserWapper = styled.div`
+const UserWapper = styled.a`
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
@@ -77,4 +72,4 @@ const Time = styled.p`
     }
 `
 
-export default SidebarUser;
+export default SingleChannel;
