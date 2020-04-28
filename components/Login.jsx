@@ -29,6 +29,7 @@ class Login extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    console.log('hello')
 
     const user = {
       email: this.state.username,

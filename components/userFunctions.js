@@ -1,15 +1,10 @@
 import axios from "axios";
+import {myApi} from './api';
 
 
 
-const options = {
-    credentials: "include",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json"
-    },
-    
-};
+
+
 
 export const signup = (newUser) => {
     return axios 
@@ -17,7 +12,7 @@ export const signup = (newUser) => {
         name: newUser.name,
         email: newUser.email,
         password: newUser.password
-    },options)
+    },myApi)
    
     .then(response => {
         console.log("User is now registered")
