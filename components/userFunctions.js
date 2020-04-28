@@ -1,7 +1,4 @@
 import axios from "axios";
-import {myApi} from './api';
-
-
 
 
 
@@ -17,7 +14,7 @@ const options = {
 export const signup = (newUser) => {
     return axios
         .post("http://localhost:3001/users/signup", {
-            name: newUser.name,
+            name: newUser.username,
             email: newUser.email,
             password: newUser.password
         }, options)
