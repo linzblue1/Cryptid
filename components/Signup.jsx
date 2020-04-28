@@ -11,7 +11,6 @@ class Signup extends Component {
       email: "",
       password: "",
       query: "",
-      hits: [],
     };
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -57,7 +56,7 @@ class Signup extends Component {
 
     
     signup(newUser).then((res) => {
-      res.redirect("/chat");
+      console.log('Signed in')
     });
   };
 
@@ -92,13 +91,13 @@ class Signup extends Component {
             value={this.state.password}
           ></PasswordInput>
           <br></br>
-          <HThree>Confirm Password:</HThree>
+          {/* <HThree>Confirm Password:</HThree>
           <PasswordMatchInput
             type="text"
             placeholder="Password-Confirm"
             onChange={this.onChangePassword}
             value={this.state.password}
-          ></PasswordMatchInput>
+          ></PasswordMatchInput> */}
           <br></br>
           <SignUpButton
             type="submit"
