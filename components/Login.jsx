@@ -27,17 +27,25 @@ class Login extends Component {
     });
   };
 
+  handleChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
   onSubmit(e) {
     e.preventDefault();
     console.log('hello')
 
     const user = {
-      email: this.state.username,
+      username: this.state.username,
       password: this.state.password,
     };
 
+    console.log("user is", user);
+
     login(user).then((res) => {
-      res.redirect("/chat");
+      console.log('hello')
     });
   }
 
@@ -47,21 +55,24 @@ class Login extends Component {
         <TitleWrapper>
           <LoginTitle>Login</LoginTitle>
         </TitleWrapper>
-        <FormWrapper onSubmit={this.onSubmit}>
+        <FormWrapper>
+          <form onSubmit={this.onSubmit}>
           <HThree>Username:</HThree>
           <UsernameInput
             type="text"
             placeholder="username"
-            value={this.state.email}
-            onChange={this.onChangeUsername}
+            name="username"
+            value={this.state.username}
+            onChange={this.handleChange}
           ></UsernameInput>
           <br></br>
           <HThree>Password:</HThree>
           <PasswordInput
             type="text"
             placeholder="password"
+            name="password"
             value={this.state.password}
-            onChange={this.onChangePassword}
+            onChange={this.handleChange}
           ></PasswordInput>
           <br></br>
           <LoginButton
@@ -69,6 +80,7 @@ class Login extends Component {
             value="Login"
             className="login-button"
           ></LoginButton>
+          </form>
           <br></br>
           <SignUp href="/signup">Sign up!</SignUp>
           <HSix>Can't access your account?</HSix>

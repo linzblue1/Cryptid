@@ -30,13 +30,12 @@ export const signup = (newUser) => {
 
 export const login = (user) => {
     return axios
-        .post("users/login", {
+        .post("http://localhost:3001/users/login", {
             username: user.username,
             password: user.password
         })
         .then(response => {
-            localStorage.setItem('usertoken', response.data)
-            return response.data
+            return response
         })
         .catch(err => {
             console.log(err)
