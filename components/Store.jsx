@@ -17,7 +17,13 @@ const initState = {
 }
 const reducer = (state, action) => {
     const { from, msg } = action.payload;
+    console.log(state);
     switch (action.type) {
+        case 'SET_SELECTED_CHANNEL':
+            return {
+                ...state,
+                selectedChannel: action.payload,
+            }
         case 'RECEIVE_MESSAGE':
             return {
                 ...state,

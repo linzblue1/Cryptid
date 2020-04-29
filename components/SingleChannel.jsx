@@ -4,22 +4,15 @@ import { Store, CTX } from './Store';
 
 const SingleChannel = (props) => {
     const { state, sendChatAction, } = React.useContext(CTX);
-    console.log(state);
-    console.log(props);
-    
-    // const getLastMessage = () => {
-    //     const lastMessage = [...selectedChannel].pop();
-    //     return lastMessage;
-    // }
+    // console.log(state);
+    // console.log(props);
         return (
-            <UserWapper href="#">
+            <UserWapper>
                     <ImageWrapper>
                     <UserImage src="/images/user.png" atl="user image" className="channelImage"/>
                     </ImageWrapper>
                     <InfoWrapper>
                         <UserName>{props.eachChannel}</UserName>
-                        <LastMessage>HALP</LastMessage>
-                        <Time>4:20 PM</Time>
                     </InfoWrapper>
             </UserWapper>
         );
@@ -63,20 +56,20 @@ const UserName = styled.p`
         display: none;
     }
 `
-const LastMessage = styled.p`
-    font-size: 12px;
-    margin-top: 4px;
-    @media only screen and (min-width : 50px) and (max-width : 530px){
-        display: none;
-    }
-`
-const Time = styled.p`
-    font-size: 10px;
-    margin: 0px;
-    margin-bottom: 5px;
-    @media only screen and (min-width : 50px) and (max-width : 530px){
-        display: none;
-    }
-`
+// const LastMessage = styled.p`
+//     font-size: 12px;
+//     margin-top: 4px;
+//     @media only screen and (min-width : 50px) and (max-width : 530px){
+//         display: none;
+//     }
+// `
+// const Time = styled.p`
+//     font-size: 10px;
+//     margin: 0px;
+//     margin-bottom: 5px;
+//     @media only screen and (min-width : 50px) and (max-width : 530px){
+//         display: none;
+//     }
+// `
 
 export default SingleChannel;

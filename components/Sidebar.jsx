@@ -6,19 +6,24 @@ const Sidebar = () => {
     const { state, sendChatAction } = React.useContext(CTX);
     console.log(state);
     const channel = Object.keys(state.allChats);
-    const selectedChannel = state.allChats[state.selectedChannel];
-    
+    const changeActiveChannel = (eaChannel) => {
+        sendChatAction({type:"SET_SELECTED_CHANNEL", payload:eaChannel})
+    }
         return (
             <SideNav>
                 {
                     channel.map((eaChannel, i) => (
-                        <SingleChannel eachChannel={eaChannel} index={i}/>
+                        <SingleChannelWrapper key={i} onClick={() => {changeActiveChannel(eaChannel)}}>
+                            <SingleChannel eachChannel={eaChannel} key={i}/>
+                        </SingleChannelWrapper>
                         ))
                 }
             </SideNav>
         );
 }
 
+const SingleChannelWrapper = styled.button`
+    `
 
 const SideNav = styled.div`
     display: flex;
