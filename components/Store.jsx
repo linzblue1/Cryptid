@@ -3,25 +3,31 @@ import io from 'socket.io-client'
 export const CTX = React.createContext();
 
 const initState = {
-    general: [
-        { from: 'user1', msg: 'hello' },
-        { from: 'user2', msg: 'u stink' },
-        { from: 'user3', msg: 'some other words' }
-    ],
-    channel2: [
-        { from: 'user1', msg: 'hello' }
-    ]
+    selectedChannel: 'general',
+    allChats: {
+        general: [
+            { from: 'user1', msg: 'hello' },
+            { from: 'user2', msg: 'u stink' },
+            { from: 'user3', msg: 'some other words' }
+        ],
+        channel2: [
+            { from: 'user1', msg: 'hello' }
+        ]
+    }
 }
 const reducer = (state, action) => {
-    const { from, msg, channel } = action.payload;
+    const { from, msg } = action.payload;
     switch (action.type) {
         case 'RECEIVE_MESSAGE':
             return {
                 ...state,
-                [channel]: [
-                    ...state[channel],
-                    { from, msg }
-                ]
+                allChats:{
+                    ...state.allChats,
+                    [state.selectedChannel]: [
+                        ...state.allChats[state.selectedChannel],
+                        { from, msg }
+                    ]
+                }
             }
         default:
             return state
@@ -36,7 +42,7 @@ const sendChatAction = (value) => {
 
 
 export const Store = (props) => {
-    const [allChats, dispatch] = React.useReducer(reducer, initState)
+    const [state, dispatch] = React.useReducer(reducer, initState)
 
     if (!socket) {
         socket = io(':3001')
@@ -50,7 +56,7 @@ export const Store = (props) => {
 
 
     return (
-        <CTX.Provider value={{ allChats, sendChatAction, user }}>
+        <CTX.Provider value={{ state, sendChatAction, user }}>
             {props.children}
         </CTX.Provider>
     )

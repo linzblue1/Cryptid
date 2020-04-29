@@ -1,17 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-import UserMessage from "./UserMessage";
+import { Store, CTX } from './Store';
 
-const SingleChannel = ({chat, index}) => {
+const SingleChannel = (props) => {
+    const { state, sendChatAction, } = React.useContext(CTX);
+    console.log(state);
+    console.log(props);
+    
+    // const getLastMessage = () => {
+    //     const lastMessage = [...selectedChannel].pop();
+    //     return lastMessage;
+    // }
         return (
-            
             <UserWapper href="#">
                     <ImageWrapper>
-                    <UserImage src="/images/user.png" atl="user image"/>
+                    <UserImage src="/images/user.png" atl="user image" className="channelImage"/>
                     </ImageWrapper>
                     <InfoWrapper>
-                        <UserName>Atlanta Channel</UserName>
-                        <LastMessage>YEET</LastMessage>
+                        <UserName>{props.eachChannel}</UserName>
+                        <LastMessage>HALP</LastMessage>
                         <Time>4:20 PM</Time>
                     </InfoWrapper>
             </UserWapper>

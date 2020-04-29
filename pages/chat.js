@@ -8,23 +8,20 @@ import { Store, CTX } from '../components/Store'
 const ChatBox = (props) => {
   const [textValue, changeTextValue] = React.useState('');
 
-  const { allChats, sendChatAction, user } = React.useContext(CTX);
-  const channel = Object.keys(allChats);
-  const [activeChannel, changeActiveChannel] = React.useState(channel[0])
-  console.log(allChats)
+  const { state, sendChatAction, user } = React.useContext(CTX);
+  console.log(state.allChats)
 
 
 
   const onKeyPressHandler = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      sendChatAction({ from: user, msg: textValue, channel: activeChannel })
+      sendChatAction({ from: user, msg: textValue, })
       changeTextValue('')
     }
   }
 
   const onChangeHandler = e => {
-
     changeTextValue(e.target.value);
   }
 
@@ -32,11 +29,9 @@ const ChatBox = (props) => {
   return (
 
     <Layout>
-      <Sidebar />
+      <Sidebar/>
       <Wrapper>
-
         <InnerBoxWrapper>
-
           <InnerBox>
             <UserMessage />
             <input
@@ -46,9 +41,7 @@ const ChatBox = (props) => {
               onKeyPress={onKeyPressHandler}
             />
           </InnerBox>
-
         </InnerBoxWrapper>
-
       </Wrapper>
     </Layout>
   )

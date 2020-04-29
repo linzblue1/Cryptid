@@ -1,27 +1,24 @@
 import React from "react";
-import { Component } from "react";
 import SingleChannel from "./SingleChannel";
 import styled from "styled-components";
-import UserMessage from "./UserMessage";
-
-class Sidebar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {channels: ["channel one", "channel 2"]};
-    }
-    render() {
-        const { channels } = this.state;
+import { Store, CTX } from './Store';
+const Sidebar = () => {
+    const { state, sendChatAction } = React.useContext(CTX);
+    console.log(state);
+    const channel = Object.keys(state.allChats);
+    const selectedChannel = state.allChats[state.selectedChannel];
+    
         return (
             <SideNav>
                 {
-                    channels.map((oneChannel, i) => (
-                        <SingleChannel channel={oneChannel} key={i}/>
-                    ))
+                    channel.map((eaChannel, i) => (
+                        <SingleChannel eachChannel={eaChannel} index={i}/>
+                        ))
                 }
             </SideNav>
         );
-    }
 }
+
 
 const SideNav = styled.div`
     display: flex;
