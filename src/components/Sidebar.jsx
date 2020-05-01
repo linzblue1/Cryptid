@@ -1,7 +1,7 @@
 import React from "react";
 import SingleChannel from "./SingleChannel";
 import styled from "styled-components";
-import { Store, CTX } from './Store';
+import { CTX } from './Store';
 const Sidebar = () => {
     const { state, dispatch } = React.useContext(CTX);
 
