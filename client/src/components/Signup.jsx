@@ -10,12 +10,36 @@ class Signup extends Component {
       username: "",
       email: "",
       password: "",
+      query: "",
     };
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onChangeQuery = this.onChangeQuery.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  handleChange = (e) => {
+  onChangeUsername = (e) => {
     this.setState({
-      [e.target.name]: e.target.value,
+      username: e.target.value,
+    });
+  };
+
+  onChangeEmail = (e) => {
+    this.setState({
+      email: e.target.value,
+    });
+  };
+
+  onChangePassword = (e) => {
+    this.setState({
+      password: e.target.value,
+    });
+  };
+
+  onChangeQuery = (e) => {
+    this.setState({
+      query: e.target.value,
     });
   };
 
@@ -27,7 +51,9 @@ class Signup extends Component {
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
+      query: this.state.query,
     };
+
     signup(newUser).then((res) => {
       console.log("Signed in");
     });
@@ -40,33 +66,37 @@ class Signup extends Component {
           <SignUpTitle>Signup</SignUpTitle>
         </TitleWrapper>
         <FormWrapper>
-          <form onSubmit={this.onSumbit}>
+          <form onSubmit={this.onSubmit}>
             <HThree>E-mail:</HThree>
             <EmailInput
               type="text"
               placeholder="E-mail"
-              name="email"
+              onChange={this.onChangeEmail}
               value={this.state.email}
-              onChange={this.handleChange}
             ></EmailInput>
             <HThree>Username:</HThree>
             <UsernameInput
               type="text"
               placeholder="Username"
-              name="username"
+              onChange={this.onChangeUsername}
               value={this.state.username}
-              onChange={this.handleChange}
             ></UsernameInput>
             <br></br>
             <HThree>Password:</HThree>
             <PasswordInput
               type="text"
               placeholder="Password"
-              name="password"
+              onChange={this.onChangePassword}
               value={this.state.password}
-              onChange={this.handleChange}
             ></PasswordInput>
             <br></br>
+            {/* <HThree>Confirm Password:</HThree>
+          <PasswordMatchInput
+            type="text"
+            placeholder="Password-Confirm"
+            onChange={this.onChangePassword}
+            value={this.state.password}
+          ></PasswordMatchInput> */}
             <br></br>
             <SignUpButton
               type="submit"

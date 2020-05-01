@@ -10,7 +10,22 @@ class Login extends Component {
       username: "",
       password: "",
     };
+    this.onChangeUsername = this.onChangeUsername.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  onChangeUsername = (e) => {
+    this.setState({
+      username: e.target.value,
+    });
+  };
+
+  onChangePassword = (e) => {
+    this.setState({
+      password: e.target.value,
+    });
+  };
 
   handleChange = (e) => {
     this.setState({
@@ -24,8 +39,11 @@ class Login extends Component {
 
     const user = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
     };
+
+    console.log("user is", user);
+
     login(user).then((res) => {
       console.log("hello");
     });
@@ -42,7 +60,7 @@ class Login extends Component {
             <HThree>Username:</HThree>
             <UsernameInput
               type="text"
-              placeholder="Username"
+              placeholder="username"
               name="username"
               value={this.state.username}
               onChange={this.handleChange}
@@ -51,7 +69,7 @@ class Login extends Component {
             <HThree>Password:</HThree>
             <PasswordInput
               type="text"
-              placeholder="Password"
+              placeholder="password"
               name="password"
               value={this.state.password}
               onChange={this.handleChange}
@@ -62,9 +80,9 @@ class Login extends Component {
               value="Login"
               className="login-button"
             ></LoginButton>
-            <br></br>
-            <SignUp href="/signup">Sign up!</SignUp>
           </form>
+          <br></br>
+          <SignUp href="/signup">Sign up!</SignUp>
           <HSix>Can't access your account?</HSix>
         </FormWrapper>
       </Wrapper>
