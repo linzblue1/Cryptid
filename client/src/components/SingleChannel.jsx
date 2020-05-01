@@ -51,19 +51,19 @@ const UserName = styled.p`
   }
 `;
 // const LastMessage = styled.p`
-//     font-size: 12px;
-//     margin-top: 4px;
-//     @media only screen and (min-width : 50px) and (max-width : 530px){
-//         display: none;
-//     }
-// `
+//   font-size: 12px;
+//   margin-top: 4px;
+//   @media only screen and (min-width: 50px) and (max-width: 530px) {
+//     display: none;
+//   }
+// `;
 // const Time = styled.p`
-//     font-size: 10px;
-//     margin: 0px;
-//     margin-bottom: 5px;
-//     @media only screen and (min-width : 50px) and (max-width : 530px){
-//         display: none;
-//     }
-// `
+//   font-size: 10px;
+//   margin: 0px;
+//   margin-bottom: 5px;
+//   @media only screen and (min-width: 50px) and (max-width: 530px) {
+//     display: none;
+//   }
+// `;
 
 export default SingleChannel;
